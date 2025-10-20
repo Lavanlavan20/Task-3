@@ -1,0 +1,81 @@
+# Global .gitignore for Smart-Attendance-Tracker (frontend + backend)
+# Reference: https://github.com/github/gitignore
+
+# Node
+node_modules/
+.pnp/
+.pnp.js
+.npm/
+.yarn/
+.yarn/cache/
+.yarn/install-state.gz
+
+# Build / Dist
+build/
+dist/
+.tmp/
+tmp/
+.temp/
+
+# Caches
+.cache/
+.parcel-cache/
+.eslintcache
+.vite/
+.next/
+.nuxt/
+.svelte-kit/
+
+# Testing / Coverage
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+debug.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Typescript
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+.history/
+
+# Certificates / Keys (local dev)
+*.pem
+*.key
+
+# Misc
+*.local
+*.temp
+*.tmp
+*.bak
+*.orig
+
+# Optional: lockfiles are intentionally tracked (package-lock.json, yarn.lock, pnpm-lock.yaml)
+# If you prefer to ignore them, uncomment one of the following lines:
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

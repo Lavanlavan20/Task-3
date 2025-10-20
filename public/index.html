@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Records & Commands</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <header class="border-b bg-white">
+      <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+        <h1 class="text-xl font-semibold">Records & Commands</h1>
+        <div id="status" class="text-sm text-gray-500" aria-live="polite"></div>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-6 space-y-8">
+      <section aria-labelledby="create-record">
+        <h2 id="create-record" class="text-lg font-medium mb-3">Create record</h2>
+        <form id="record-form" class="bg-white border rounded-lg p-4 grid gap-3 md:grid-cols-3" aria-describedby="record-help">
+          <div class="md:col-span-1">
+            <label for="title" class="block text-sm font-medium">Title</label>
+            <input id="title" name="title" class="mt-1 w-full rounded border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Title" required />
+          </div>
+          <div class="md:col-span-2">
+            <label for="details" class="block text-sm font-medium">Details</label>
+            <input id="details" name="details" class="mt-1 w-full rounded border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Details" />
+          </div>
+          <div class="md:col-span-3 flex gap-3">
+            <button type="submit" class="inline-flex items-center rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Add</button>
+            <p id="record-help" class="text-sm text-gray-500">Fill the fields and press Add.</p>
+          </div>
+        </form>
+      </section>
+
+      <section aria-labelledby="search-records">
+        <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div class="flex-1">
+            <label for="search" class="block text-sm font-medium">Search records</label>
+            <input id="search" class="mt-1 w-full rounded border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Search by title, details, id" />
+          </div>
+          <div class="text-sm text-gray-500" aria-live="polite" id="result-count"></div>
+        </div>
+
+        <ul id="records" class="mt-4 grid gap-3"></ul>
+      </section>
+
+      <section aria-labelledby="commands" class="pt-2">
+        <h2 id="commands" class="text-lg font-medium mb-3">Run command</h2>
+        <form id="cmd-form" class="bg-white border rounded-lg p-4 grid gap-3" aria-describedby="cmd-help">
+          <div>
+            <label for="command" class="block text-sm font-medium">Command</label>
+            <input id="command" name="command" class="mt-1 w-full rounded border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g. dir or echo Hello" />
+          </div>
+          <div class="flex gap-3">
+            <button type="submit" class="inline-flex items-center rounded bg-emerald-600 px-4 py-2 text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500">Run</button>
+            <p id="cmd-help" class="text-sm text-gray-500">Runs on the server with a 20s timeout. Output captured below.</p>
+          </div>
+          <div>
+            <label for="output" class="block text-sm font-medium">Output</label>
+            <textarea id="output" class="mt-1 w-full h-56 font-mono text-sm rounded border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" readonly aria-live="polite"></textarea>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="border-t bg-white">
+      <div class="max-w-5xl mx-auto px-4 py-4 text-sm text-gray-500">Accessible demo app. Keyboard-friendly. High contrast and focus rings enabled.</div>
+    </footer>
+
+    <script src="/script.js" type="module"></script>
+  </body>
+</html>
